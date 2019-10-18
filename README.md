@@ -1,2 +1,2 @@
-# rightsmanagement-module
-This is the wrapper of spatie/laravel-permission.
+php artisan module:update
+php artisan migrate
