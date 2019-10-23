@@ -3,6 +3,7 @@
     "type": "laravel-module",
     "description": "",
     "license": "MIT",
+    "version": "0.0.1",
     "authors": [
         {
             "name": "Nirav and Dilip",
