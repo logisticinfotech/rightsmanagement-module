@@ -71,9 +71,11 @@ class RightsManagementServiceProvider extends ServiceProvider
             $sourcePath => $viewPath
         ],'views');
 
-        $this->loadViewsFrom(array_merge(array_map(function ($path) {
+        $this->loadViewsFrom(array_filter(array_merge(array_map(function ($path) {
             return $path . '/modules/rightsmanagement';
-        }, \Config::get('view.paths')), [$sourcePath]), 'rightsmanagement');
+        }, \Config::get('view.paths')), [$sourcePath]), function ($path) {
+            return file_exists($path);
+        }), 'rightsmanagement');
     }
 
     /**
