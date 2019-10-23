@@ -21,9 +21,6 @@ class RightsManagementServiceProvider extends ServiceProvider
         $this->registerFactories();
         $this->loadMigrationsFrom(__DIR__ . '/../Database/Migrations');
 
-         // adding global middleware
-        //  $kernel = $this->app->make('Illuminate\Contracts\Http\Kernel');
-        //  $kernel->pushMiddleware('Modules\Frequencia\Http\Middleware\PeriodoMiddleware');
         $router->aliasMiddleware('role' , \Spatie\Permission\Middlewares\RoleMiddleware::class);
         $router->aliasMiddleware('permission' , \Spatie\Permission\Middlewares\PermissionMiddleware::class);
         $router->aliasMiddleware('role_or_permission' , \Spatie\Permission\Middlewares\RoleOrPermissionMiddleware::class);

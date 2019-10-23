@@ -36,7 +36,6 @@ class RolesController extends Controller
 
     public function getDatatable(Request $request)
     {
-        $user = collect([])->pluck('name');
         $result = $this->model::all();
         return DataTables::of($result)->addIndexColumn()->make(true);
     }
