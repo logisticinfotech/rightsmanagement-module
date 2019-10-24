@@ -33,7 +33,7 @@
 							autocomplete='off'>
 							@csrf
 
-							@include("admin.$moduleView._form")
+							@include("rightsmanagement::admin.$moduleView._form")
 
 							<div class="form-group">
 								<div class="text-right">

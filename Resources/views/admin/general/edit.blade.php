@@ -32,7 +32,7 @@
 							@csrf
 							<input name="_method" type="hidden" value="PUT">
 
-							@include("admin.$moduleView._form")
+							@include("rightsmanagement::admin.$moduleView._form")
 
 							<div class="form-group">
 								<div class="text-right">

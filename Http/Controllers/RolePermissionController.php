@@ -15,7 +15,7 @@ class RolePermissionController extends Controller
 {
     public function __construct() {
         $this->moduleName = "Role Permission";
-        $this->moduleRoute = url('rightsmanagement/role-permission');
+        $this->moduleRoute = url('admins/rightsmanagement/role-permission');
         $this->moduleView = "role-permission";
 
         View::share('module_name', $this->moduleName);
@@ -51,7 +51,7 @@ class RolePermissionController extends Controller
     public function update(Request $request, $id)
     {
         try {
-            $role = Role::findById($id);
+            $role = Role::find($id);
             $permissions = [];
 
             if ($request->permission) {
