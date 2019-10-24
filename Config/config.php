@@ -1,5 +1,7 @@
 <?php
 
 return [
-    'name' => 'RightsManagement'
+    'name' => 'RightsManagement',
+    'routePrefix' => 'admins', // no trailing slash required
+    'authGuard' => 'admin',
 ];

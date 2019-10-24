@@ -6,7 +6,7 @@
 		<h2>{{  $module_name }}</h2>
 		<ol class="breadcrumb">
 			<li class="breadcrumb-item">
-				<a href="{{ url('/admins') }}">Home</a>
+				<a href="{{ url(config('config.routePrefix')) }}">Home</a>
 			</li>
 			<li class="breadcrumb-item">
 				<a>{{ $module_name }} List</a>

@@ -1,8 +1,7 @@
 php artisan module:update
 php artisan migrate
 
-`admins` routes prefix required
-`inspania` theme setup required
+`admins` routes prefix required, works best with `inspania` theme, minimum `bootstrap 4` required
 
 # For Dev of this package
 

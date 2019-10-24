@@ -11,10 +11,10 @@
 |
 */
 
-Route::prefix('admins/rightsmanagement')->group(function () {
+Route::prefix(config('config.routePrefix') . '/rightsmanagement')->group(function () {
     Route::get('/', 'RightsManagementController@index');
 
-    Route::group(['middleware' => ['auth:admin', 'role:super_admin']], function () {
+    Route::group(['middleware' => ['auth:' . config('config.routePrefix'), 'role:super_admin']], function () {
         // Role
         Route::get('roles/datatable', 'RolesController@getDatatable');
         Route::resource('roles', 'RolesController');

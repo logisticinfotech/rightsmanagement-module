@@ -14,7 +14,7 @@ class RolesController extends Controller
 
     public function __construct(Role $model) {
         $this->moduleName = "Roles";
-        $this->moduleRoute = url('admins/rightsmanagement/roles');
+        $this->moduleRoute = url(config('config.routePrefix') .'/rightsmanagement/roles');
         $this->moduleView = "roles";
         $this->model = $model;
 

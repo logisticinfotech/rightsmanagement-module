@@ -15,7 +15,7 @@ class RolePermissionController extends Controller
 {
     public function __construct() {
         $this->moduleName = "Role Permission";
-        $this->moduleRoute = url('admins/rightsmanagement/role-permission');
+        $this->moduleRoute = url(config('config.routePrefix') . '/rightsmanagement/role-permission');
         $this->moduleView = "role-permission";
 
         View::share('module_name', $this->moduleName);

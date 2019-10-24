@@ -16,7 +16,7 @@ class PermissionController extends Controller
 
     public function __construct(Permission $model) {
         $this->moduleName = "Permission";
-        $this->moduleRoute = url('admins/rightsmanagement/permission');
+        $this->moduleRoute = url(config('config.routePrefix') .'/rightsmanagement/permission');
         $this->moduleView = "permission";
         $this->model = $model;
 
