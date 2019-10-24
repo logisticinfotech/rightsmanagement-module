@@ -14,7 +14,7 @@
 Route::prefix(config('rightsmanagement.routePrefix') . '/rightsmanagement')->group(function () {
     Route::get('/', 'RightsManagementController@index');
 
-    Route::group(['middleware' => ['auth:' . config('rightsmanagement.routePrefix'), 'role:super_admin']], function () {
+    Route::group(['middleware' => ['auth:' . config('rightsmanagement.authGuard'), 'role:super_admin']], function () {
         // Role
         Route::get('roles/datatable', 'RolesController@getDatatable');
         Route::resource('roles', 'RolesController');
