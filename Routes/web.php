@@ -26,10 +26,8 @@ Route::prefix(config('rightsmanagement.routePrefix') . '/rightsmanagement')->gro
         // Role Permission
         Route::get('role-permission/datatable', 'RolePermissionController@getDatatable');
         Route::resource('role-permission', 'RolePermissionController');
-
-        // Admin
-        Route::get('admins/datatable', 'AdminController@getDatatable');
-        Route::resource('admins', 'AdminController');
     });
-
+    // Admin
+    Route::get('admins/datatable', 'AdminController@getDatatable');
+    Route::resource('admins', 'AdminController');
 });
