@@ -23,7 +23,13 @@ Route::prefix(config('rightsmanagement.routePrefix') . '/rightsmanagement')->gro
         Route::get('permission/datatable', 'PermissionController@getDatatable');
         Route::resource('permission', 'PermissionController');
 
+        // Role Permission
         Route::get('role-permission/datatable', 'RolePermissionController@getDatatable');
         Route::resource('role-permission', 'RolePermissionController');
+
+        // Admin
+        Route::get('admins/datatable', 'AdminController@getDatatable');
+        Route::resource('admins', 'AdminController');
     });
+
 });
