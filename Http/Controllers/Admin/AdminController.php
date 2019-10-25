@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\RightsManagement\Http\Controllers;
+namespace Modules\RightsManagement\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 
 use App\Models\Admin;
@@ -22,7 +22,7 @@ class AdminController extends Controller
         $this->middleware('permission:admin_delete', ['only' => ['destroy']]);
 
         $this->moduleName = "Admins";
-        $this->moduleRoute = url('admins/admins');
+        $this->moduleRoute = url(config('rightsmanagement.routePrefix') . '/admins');
         $this->moduleView = "admins";
         $this->model = $model;
 
@@ -38,7 +38,7 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view("admin.$this->moduleView.index");
+        return view("rightsmanagement::admin.$this->moduleView.index");
     }
 
     public function getDatatable(Request $request)
@@ -68,7 +68,7 @@ class AdminController extends Controller
             "roles" => $roles
         ];
 
-        return view("admin.general.create", $viewData);
+        return view("rightsmanagement::admin.general.create", $viewData);
     }
 
     /**
@@ -142,7 +142,7 @@ class AdminController extends Controller
             "roles" => $roles
         ];
 
-        return view("admin.general.edit", $viewData);
+        return view("rightsmanagement::admin.general.edit", $viewData);
     }
 
     /**

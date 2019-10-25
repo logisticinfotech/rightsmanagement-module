@@ -27,7 +27,15 @@ Route::prefix(config('rightsmanagement.routePrefix') . '/rightsmanagement')->gro
         Route::get('role-permission/datatable', 'RolePermissionController@getDatatable');
         Route::resource('role-permission', 'RolePermissionController');
     });
-    // Admin
-    Route::get('admins/datatable', 'AdminController@getDatatable');
-    Route::resource('admins', 'AdminController');
+
 });
+
+$appRoutes = function () {
+    // Admin
+    Route::middleware(['auth:' . config('rightsmanagement.authGuard'), 'role:super_admin'])->group(function () {
+        Route::get('admins/datatable', 'AdminController@getDatatable');
+        Route::resource('admins', 'AdminController');
+    });
+};
+
+Route::group(array('prefix' => config('rightsmanagement.routePrefix'), "namespace" => "Admin", "as" => "admin::"), $appRoutes);
