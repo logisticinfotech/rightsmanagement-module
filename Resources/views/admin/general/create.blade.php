@@ -1,4 +1,4 @@
-@extends('rightsmanagement::admin.layouts.app')
+@extends(config('rightsmanagement.defaultLayout') . '.app')
 @section('title', 'Create '. $module_name)
 @section("styles")
 @stop

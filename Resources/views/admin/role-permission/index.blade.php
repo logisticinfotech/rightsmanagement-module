@@ -1,4 +1,4 @@
-@extends('rightsmanagement::admin.layouts.app')
+@extends(config('rightsmanagement.defaultLayout') . '.app')
 @section('title', $module_name)
 @section('content')
 <div class="row wrapper border-bottom white-bg page-heading">
