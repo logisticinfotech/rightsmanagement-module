@@ -5,9 +5,11 @@
     "keywords": [],
     "order": 0,
     "providers": [
-        "Modules\\RightsManagement\\Providers\\RightsManagementServiceProvider"
+        "Modules\\RightsManagement\\Providers\\RightsManagementServiceProvider",
+        "Spatie\\Permission\\PermissionServiceProvider"
     ],
-    "aliases": {},
+    "aliases": [],
     "files": [],
-    "requires": []
+    "requires": [],
+    "active": 1
 }
