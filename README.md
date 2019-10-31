@@ -17,6 +17,16 @@ For Congifuration you can fire
     ];
 ```
 
+# In Your Admin Model
+please add `use HasRoles;` to your model
+```
+use Spatie\Permission\Traits\HasRoles;
+class Admin extends Authenticatable
+{
+    use HasRoles;
+```
+
+
 # For Dev of this package
 
 for versioning

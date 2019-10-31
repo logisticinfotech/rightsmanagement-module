@@ -1,4 +1,5 @@
 <?php
+
 namespace Modules\RightsManagement\Database\Seeders;
 
 use Illuminate\Database\Seeder;
@@ -34,17 +35,22 @@ class MakeSuperAdminSeeder extends Seeder
         $admin = Admin::role($roleInput['name'])->get();
 
         if (!$admin->count()) {
-            $this->command->info("Adding Super Admin...");
+
             $userInput = [
                 'name' => 'Admin',
                 'email' => 'admin@admin.com',
                 'password' => Hash::make('123456')
             ];
 
-            $user = Admin::create($userInput);
+            $user = Admin::where('email', $userInput['email'])->first();
+            if (!$user) {
+                $this->command->info("Adding Super Admin...");
+                $user = Admin::create($userInput);
+                $this->command->info("Super Admin Added!!!");
+            } else {
+                $this->command->info("Super Admin already exits");
+            }
             $user->assignRole($roleInput['name']);
-
-            $this->command->info("Super Admin Added!!!");
         } else {
             $this->command->info("Super Admin Exists.");
         }

@@ -12,8 +12,8 @@ class Admin extends Authenticatable
 
     protected $primaryKey = "id";
 
-    protected $guard = 'admins';
-    // protected $guard_name = 'web';
+    // protected $guard = 'admins';
+    protected $guard_name = 'web';
 
     protected $guarded = [
         'id'
